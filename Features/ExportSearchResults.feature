@@ -1,5 +1,4 @@
 ﻿Feature: Export Search Results to CSV
-	Simple calculator for adding two numbers
 
 Background: 	
 	Given I have the following list of invoices
