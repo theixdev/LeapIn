@@ -24,5 +24,8 @@ jobs:
       run: dotnet restore
     - name: Build
       run: dotnet build --no-restore
-    - name: Test
-      run: dotnet test --no-build --verbosity normal
+    - name: Get Specflow CLI
+      run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
+    - name: Run CLI
+      run: livingdoc feature-folder ./Features
+      
