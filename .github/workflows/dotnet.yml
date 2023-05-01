@@ -27,5 +27,6 @@ jobs:
     - name: Get Specflow CLI
       run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
     - name: Run CLI
-      run: livingdoc feature-folder ./Features
+      run: livingdoc feature-folder ./Features -o ./docs/LivingDoc.html
+
       
