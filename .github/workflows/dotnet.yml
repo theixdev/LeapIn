@@ -15,12 +15,18 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  
+
 
 jobs:
   build:
-
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-
+    concurrency:
+      group: "pages"
+      cancel-in-progress: false
     steps:
     - uses: actions/checkout@v3
     - name: Setup .NET
@@ -35,30 +41,19 @@ jobs:
       run: dotnet tool install --global SpecFlow.Plus.LivingDoc.CLI
     - name: Run CLI
       run: livingdoc feature-folder ./Features -o ./docs/LivingDoc.html
+    - name: Setup Pages
+      uses: actions/configure-pages@v3
+    - name: Upload artifact
+      uses: actions/upload-pages-artifact@v1
+      with:
+        # Upload entire repository
+        path: './docs'
+    - name: Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v2
       
 
 
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    concurrency:
-      group: "pages"
-      cancel-in-progress: false
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v3
-      - name: Setup Pages
-        uses: actions/configure-pages@v3
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v1
-        with:
-          # Upload entire repository
-          path: '.'
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v2
       
       
 
