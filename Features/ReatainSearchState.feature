@@ -1,4 +1,4 @@
-Feature: Retain Search State
+Feature: Payment History Search Results
 
 
 Background: 

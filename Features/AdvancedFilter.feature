@@ -1,4 +1,4 @@
-﻿Feature: Advanced Filter
+﻿Feature: Payment History Advanced Filter
 Background: 
 	Given I have am on the Payment History Page
 	And I have made a search that returns these invoices
@@ -75,11 +75,11 @@ Scenario: Filter By Invoice Status
 	  | 7 | Paid   | 
    
 Scenario: Filter By Provider
-		Given the I have the 'Advanced Filter Modal' open
-		When I select 'Provider X' from the search drop down 
-		And click the Filter Button
-		Then the modal should close
-		And the search results should display these invoices
-		  | InvoiceId | Provider |
-		  | 2         | Provider X         | 
+	Given the I have the 'Advanced Filter Modal' open
+	When I select 'Provider X' from the search drop down 
+	And click the Filter Button
+	Then the modal should close
+	And the search results should display these invoices
+	  | InvoiceId | Provider |
+	  | 2         | Provider X         | 
 		  

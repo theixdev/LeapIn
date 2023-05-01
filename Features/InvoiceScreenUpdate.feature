@@ -1,4 +1,4 @@
-﻿Feature: Invoice Screen Update
+﻿Feature: Invoice Screen
 	
 
 @mytag
