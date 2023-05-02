@@ -1,5 +1,6 @@
 ﻿Feature: Export Search Results to CSV
-
+A participant can export their search results to CSV for offline reviewing and record keeping.
+	
 Background: 	
 	Given I have the following list of invoices
 	| InvoiceId | InvoiceFrom  |
@@ -7,7 +8,7 @@ Background:
 	| 2         | XYZ Industry |
 	| 3         | Testers PTY LTD |
 
-@mytag
+@manual
 Scenario: Export CSV
 	Given I am on the Invoice Search Screen
 	And I have executed a search that returns the results 

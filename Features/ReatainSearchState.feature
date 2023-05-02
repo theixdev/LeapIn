@@ -1,5 +1,6 @@
 Feature: Payment History Search Results
-
+A participants search state will remain after returning from an invoice. This will save the participant 
+time and frustration re-entering the search details
 
 Background: 
 	Given I have the following list of invoices
@@ -7,7 +8,8 @@ Background:
 	| 1         | Test Company |
 	| 2         | XYZ Industry |
 	| 3         | Testers PTY LTD |
-	
+ 
+@manual	
 Scenario: Maintaining search results
 	Given I am on the Payment History screen
 	And I have completed a search for 'test'

@@ -1,7 +1,8 @@
 ﻿Feature: Invoice Screen
-	
+Displaying relevant payment details with optimization for different users improves financial 
+management, increases efficiency, and enhances the user experience	
 
-@mytag
+@manual
 Scenario Outline: View All Invoice Dates
 	Given I have an invoice with InvoiceID: <InvoiceID> , InvoiceDate:<Invoice Date>
 	And a Invoice Date of <Invoice Date>
@@ -19,12 +20,14 @@ Scenario Outline: View All Invoice Dates
 	  | 1       | 2023-04-13   | 2023-04-14    | 2023-04-15   | 2023-04-15   |
 	  | 2       | 2023-05-13   | NULL          | 2023-05-15   | 2023-05-15   |
 	  | 3       | 2023-12-01   | NULL          | 2023-12-01   | NULL         |
-   
+ 
+@manual  
 Scenario: Loading onto a new invoice shows minimized notes
 	Given I have an invoice
 	When I visit the Invoice screen
 	Then I should see notes in a minimized state
 	
+@manual
 Scenario: Clicking on minimized notes should maximize them
 	Given I am on the invoice screen
 	And the notes are minimized
