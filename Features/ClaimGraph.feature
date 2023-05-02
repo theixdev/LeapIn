@@ -4,8 +4,8 @@ allocated plan budget.
 
 
 @manual
-Scenario: FINISH THIS
-	Given put stuff here
-	And here
-	When there
-	Then go
+Scenario: Claims Graph
+	Given I am on the Payment History
+	When I click on 'Budget' button
+	Then  I should be taken to the Charts screen that displays my current spend verse allocated budget
+	
