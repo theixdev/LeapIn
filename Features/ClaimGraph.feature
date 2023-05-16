@@ -1,7 +1,7 @@
 ﻿Feature: Claim Graph
 Give the participants the ability to quantify how much claim money they have spent towards their 
 allocated plan budget.
-
+![Alt text](images/test.png)
 
 @manual
 Scenario: Claims Graph
